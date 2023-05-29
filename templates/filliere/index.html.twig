@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Filliere index{% endblock %}
+
+{% block body %}
+    <h1>Filliere index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Designation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for filliere in fillieres %}
+            <tr>
+                <td>{{ filliere.id }}</td>
+                <td>{{ filliere.designation }}</td>
+                <td>
+                    <a href="{{ path('app_filliere_show', {'id': filliere.id}) }}">show</a>
+                    <a href="{{ path('app_filliere_edit', {'id': filliere.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_filliere_new') }}">Create new</a>
+{% endblock %}

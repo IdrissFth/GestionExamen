@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Filliere{% endblock %}
+
+{% block body %}
+    <h1>Edit Filliere</h1>
+
+    {{ include('filliere/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_filliere_index') }}">back to list</a>
+
+    {{ include('filliere/_delete_form.html.twig') }}
+{% endblock %}

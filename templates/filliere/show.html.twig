@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Filliere{% endblock %}
+
+{% block body %}
+    <h1>Filliere</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ filliere.id }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ filliere.designation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_filliere_index') }}">back to list</a>
+
+    <a href="{{ path('app_filliere_edit', {'id': filliere.id}) }}">edit</a>
+
+    {{ include('filliere/_delete_form.html.twig') }}
+{% endblock %}
